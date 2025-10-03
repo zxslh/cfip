@@ -48,6 +48,13 @@ for url in urls:
             
             # 将找到的IP添加到集合中（自动去重）
             unique_ips.update(ip_matches)
+            if url == 'https://ip.164746.xyz' and ip_matches:
+                token = 'PB77bds9fd9q9Wcbb8exd8Ch8TBR74'
+                domain = 'cf-zxs.dynv6.net'
+                ipv4 = ip_matches[0]
+                update_url = f'http://dynv6.com/api/update?token={token}&hostname={domain}&ipv4={ipv4}'
+                response = requests.get(update_url, timeout=10).text.strip()
+                print(response)
     except requests.exceptions.RequestException as e:
         print(f'请求 {url} 失败: {e}')
         continue
