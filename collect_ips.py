@@ -25,3 +25,26 @@ try:
 except requests.exceptions.RequestException as e:
     print(f'请求 {url} 失败: {e}')
         
+url = 'https://ipdb.api.030101.xyz/?type=bestcf&country=true'
+try:
+        # 发送HTTP请求获取网页内容
+    response = requests.get(url, timeout=5)        
+        # 确保请求成功
+    if response.status_code == 200:
+            # 获取网页的文本内容
+        html_content = response.text            
+            # 使用正则表达式查找IP地址
+        ip_matches = re.findall(ip_pattern, html_content, re.IGNORECASE)
+
+        if ip_matches:
+            token = 'c4qv9NXXa6WEv5RyR2LpK-tnoZso92'
+            domain = 'cf-zxs.v6.army'
+            ipv4 = ip_matches[0]
+            update_url = f'http://dynv6.com/api/update?token={token}&hostname={domain}&ipv4={ipv4}'
+            response = requests.get(update_url, timeout=10).text.strip()
+            #print(response)
+except requests.exceptions.RequestException as e:
+    print(f'请求 {url} 失败: {e}')
+
+
+
