@@ -21,7 +21,7 @@ try:
             ipv4 = ip_matches[0]
             update_url = f'http://dynv6.com/api/update?token={token}&hostname={domain}&ipv4={ipv4}'
             response = requests.get(update_url, timeout=10).text.strip()
-            #print(response)
+            print(response)
 except requests.exceptions.RequestException as e:
     print(f'请求 {url} 失败: {e}')
         
@@ -42,7 +42,7 @@ try:
             ipv4 = ip_matches[0]
             update_url = f'http://dynv6.com/api/update?token={token}&hostname={domain}&ipv4={ipv4}'
             response = requests.get(update_url, timeout=10).text.strip()
-            #print(response)
+            print(response)
 except requests.exceptions.RequestException as e:
     print(f'请求 {url} 失败: {e}')
 
@@ -63,7 +63,7 @@ try:
             ipv4 = ip_matches[0]
             update_url = f'http://dynv6.com/api/update?token={token}&hostname={domain}&ipv4={ipv4}'
             response = requests.get(update_url, timeout=10).text.strip()
-            #print(response)
+            print(response)
 except requests.exceptions.RequestException as e:
     print(f'请求 {url} 失败: {e}')
 
@@ -84,7 +84,7 @@ try:
             ipv4 = ip_matches[0]
             update_url = f'http://dynv6.com/api/update?token={token}&hostname={domain}&ipv4={ipv4}'
             response = requests.get(update_url, timeout=10).text.strip()
-            #print(response)
+            print(response)
 except requests.exceptions.RequestException as e:
     print(f'请求 {url} 失败: {e}')
 
@@ -105,7 +105,7 @@ try:
             ipv4 = ip_matches[-1]
             update_url = f'http://dynv6.com/api/update?token={token}&hostname={domain}&ipv4={ipv4}'
             response = requests.get(update_url, timeout=10).text.strip()
-            #print(response)
+            print(response)
 except requests.exceptions.RequestException as e:
     print(f'请求 {url} 失败: {e}')
 
